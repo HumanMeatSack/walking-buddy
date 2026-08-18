@@ -17,7 +17,7 @@ internal static class Program
     [STAThread]
     private static void Main()
     {
-        var application = new Application
+        var application = new System.Windows.Application
         {
             ShutdownMode = ShutdownMode.OnExplicitShutdown
         };
@@ -75,9 +75,9 @@ internal sealed class WalkingBuddyApp : IDisposable
         ("huge", "Huge", 1.75)
     ];
 
-    private readonly Application application;
+    private readonly System.Windows.Application application;
     private readonly Window window;
-    private readonly Image image;
+    private readonly System.Windows.Controls.Image image;
     private readonly Forms.NotifyIcon trayIcon;
     private readonly Forms.ContextMenuStrip menu;
     private readonly DispatcherTimer timer;
@@ -99,7 +99,7 @@ internal sealed class WalkingBuddyApp : IDisposable
     private bool isDragging;
     private bool disposed;
 
-    public WalkingBuddyApp(Application application)
+    public WalkingBuddyApp(System.Windows.Application application)
     {
         this.application = application;
         settingsPath = Path.Combine(
@@ -113,7 +113,7 @@ internal sealed class WalkingBuddyApp : IDisposable
             images[pet.Key] = LoadImage(pet.Asset);
         }
 
-        image = new Image
+        image = new System.Windows.Controls.Image
         {
             Stretch = Stretch.Uniform,
             SnapsToDevicePixels = true,

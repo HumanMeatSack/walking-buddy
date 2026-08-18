@@ -21,6 +21,10 @@ dotnet publish (Join-Path $ProjectRoot "Windows\WalkingBuddy.Windows.csproj") `
     -p:DebugType=None `
     -p:DebugSymbols=false
 
+if ($LASTEXITCODE -ne 0) {
+    exit $LASTEXITCODE
+}
+
 Compress-Archive -Path (Join-Path $OutputDirectory "*") -DestinationPath $ArchivePath
 
 Write-Host "Built: $OutputDirectory"
