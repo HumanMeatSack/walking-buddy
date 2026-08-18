@@ -16,3 +16,16 @@ jobs:
         with:
           name: Walking-Buddy-macOS
           path: .build/Walking-Buddy-macOS.zip
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Build Windows app
+        shell: pwsh
+        run: ./scripts/build-windows.ps1
+      - name: Upload Windows app archive
+        uses: actions/upload-artifact@v6
+        with:
+          name: Walking-Buddy-Windows-x64
+          path: .build/Walking-Buddy-Windows-x64.zip
