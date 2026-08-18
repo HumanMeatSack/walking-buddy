@@ -117,7 +117,7 @@ internal sealed class WalkingBuddyApp : IDisposable
         {
             Stretch = Stretch.Uniform,
             SnapsToDevicePixels = true,
-            RenderTransformOrigin = new Point(0.5, 0.5)
+            RenderTransformOrigin = new System.Windows.Point(0.5, 0.5)
         };
 
         window = new Window
@@ -127,7 +127,7 @@ internal sealed class WalkingBuddyApp : IDisposable
             WindowStyle = WindowStyle.None,
             ResizeMode = ResizeMode.NoResize,
             AllowsTransparency = true,
-            Background = Brushes.Transparent,
+            Background = System.Windows.Media.Brushes.Transparent,
             Topmost = true,
             ShowInTaskbar = false,
             ShowActivated = false,
@@ -189,7 +189,7 @@ internal sealed class WalkingBuddyApp : IDisposable
         {
             var item = new Forms.ToolStripMenuItem(scale.Title);
             item.Click += (_, _) => application.Dispatcher.Invoke(() => ChooseScale(scale.Key));
-            scaleMenu.DropDownItems.Add(item);
+            sizeMenu.DropDownItems.Add(item);
             scaleMenuItems[scale.Key] = item;
         }
         contextMenu.Items.Add(sizeMenu);
