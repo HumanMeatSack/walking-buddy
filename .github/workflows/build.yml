@@ -8,11 +8,11 @@ jobs:
   macos:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Build app
         run: ./scripts/build.sh
       - name: Upload app archive
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: Walking-Buddy-macOS
           path: .build/Walking-Buddy-macOS.zip
